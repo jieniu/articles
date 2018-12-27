@@ -45,4 +45,10 @@
 
 在 jupyter notebook 页面上点击按钮 New，选择 Python 版本，即可进入一个交互式 Python 环境
 
-![]()
+![](https://github.com/jieniu/articles/blob/master/pics/jupyter_new.png?raw=true)
+
+打开交互式环境后，你可以给这个 notebook 起一个名字，如下图的第1步，我给这个 Nodebook 起了个 Housing 的名字；接着，可以在下面的命令行（cell）敲入简单的 Python 命令 `print("Hello world!")`，试着运行一下这条命令吧
+
+![](https://github.com/jieniu/articles/blob/master/pics/jupyter_start.png?raw=true)
+
+查看你运行 jupyter 的目录，你会看到多出了一个 Housing.ipynb 的文件，这就是 jupyter 给你创建的 notebook。
