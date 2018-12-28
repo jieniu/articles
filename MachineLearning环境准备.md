@@ -52,3 +52,4 @@
 ![](https://github.com/jieniu/articles/blob/master/pics/jupyter_start.png?raw=true)
 
 查看你运行 jupyter 的目录，你会看到多出了一个 Housing.ipynb 的文件，这就是 jupyter 给你创建的 notebook。
+
