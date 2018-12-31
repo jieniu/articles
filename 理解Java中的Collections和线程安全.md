@@ -12,7 +12,7 @@ Java 中的 Collection 类中，分为线程安全的和非线程安全的，其
 
 迭代器 iterator 一般用来对 Collection 进行遍历、修改 Collection 元素等，而当多个线程共享同一个 Collection 对象时，如果其中一个线程通过迭代器遍历 Collection，于此同时有另一个线程正在修改它，这时 Java 便会抛出 `ConcurrentModificationException` 异常，这也是 Fail-Fast 名字的出处。
 
-Java 做这样的处理是因为多个线程同时使用读写迭代器是非常危险的行为，会导致程序的不确定性和一致性的问题，一旦发现此类行为，越早“制止”越好，这种机制可以很好的帮助诊断 bug，所以你的程序遇到 `ConcurrentModificationException` 这种异常应该直接终止，而不是去捕获它。
+Java 做这样的处理是因为多个线程同时读写迭代器是非常危险的行为，会导致程序的不确定性和一致性的问题，一旦发现此类行为，越早“制止”越好，这种机制可以很好的帮助诊断 bug，所以你的程序遇到 `ConcurrentModificationException` 这种异常应该直接终止，而不是去捕获它。
 
 ### 3. Synchronized Wrappers
 
@@ -54,15 +54,15 @@ Java 5 引入了并行的 Collections，它们被包含在 `java.util.concurrent
 
 #### 4.2 Compare-And-Swap（CAS）collections
 
-我们在很多场合都有听过 CAS 的概念，例如 Memcache 和 Mysql 中都实现了 CAS 机制：当我们要去更新一个值，先获取它的副本，然后在此副本的基础上计算出结果，最后拿结果和副本去做真正的修改，此时如果发现副本和原值发生了不一致，说明有其他线程抢先一步更新了原值，则更新失败，否则更新成功。
+我们在很多场合都有听过 CAS 的概念，例如 Memcache 和 Mysql 中都实现了 CAS 机制：当我们要去更新一个值，先获取它的副本，然后在此副本的基础上计算出结果，最后拿结果和副本去修改原值，此时如果发现副本和原值发生了不一致，说明有其他线程抢先一步更新了原值，则更新失败，否则更新成功。
 
 具备 CAS 机制的 Collections 包括 `ConcurrentLinkedQueue` 和 `ConcurrentSkipListMap`
 
 #### 4.3 java.util.concurrent.lock.Lock
 
-Lock 库提供丰富的锁机制，包括可重入锁 `ReentrantLock`，可重入的读写锁 `ReentrantReadWriteLock`，以及条件变量 `Condition`，除此之外，和 Synchronized Wrappers 的区别是，该库还提供更细粒度的 Collections，即将一个 Collection 分为多个部分，每部分对应一个锁，可以显著的提高并发能力。
+Lock 库提供丰富的锁机制，包括可重入锁 `ReentrantLock`，可重入的读写锁 `ReentrantReadWriteLock`，以及条件变量 `Condition`，除此之外，和 Synchronized Wrappers 的区别是，该库还提供更细粒度的 Collections 锁，即将一个 Collection 分为多个部分，每部分对应一个锁，可以显著的提高并发能力。
 
-例如 `LinkedBlockingQueue` 提供了队首和队尾两把锁，这样你可以并行的入队和出队。其他的 Collections 还包括 `ConcurrentHashMap` 和 `BlockingQueue` 的所有实现。
+例如 `LinkedBlockingQueue` 提供了队首和队尾两把锁，这样你可以并行的入队和出队。其他的并发 Collections 还包括 `ConcurrentHashMap` 和 `BlockingQueue` 的所有实现。
 
 
 
