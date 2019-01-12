@@ -30,7 +30,7 @@ class Dog {
 };
 ```
 
-上面这段赋值操作符的实现，首先就把指针 `pCollar` 给释放了，如果传入的对象就是自己，那么 `pCollar = new Collar(*rhs.pCollar);` 这一行中的 `rhs.pCollar` 就会引用一个被释放的指针，这会对程序造成灾难性的结果。
+上面这段赋值操作符的实现，首先就把指针 `pCollar` 给释放了，如果传入的对象就是自己，那么 `pCollar = new Collar(*rhs.pCollar)` 这一行中的 `rhs.pCollar` 就会引用一个被释放的指针，这会对程序造成灾难性的结果。
 
 于是，为避免「复制自己」的问题，我们可以在 `delete` 之前加一个条件判断，如下
 
@@ -88,7 +88,7 @@ class Dog {
         *pCollar = *rhs.pCollar; // member by member copy of Collars
         return *this;
     }
-}
+};
 ```
 
 以上，请记住一点
