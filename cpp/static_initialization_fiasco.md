@@ -117,7 +117,7 @@ public:
 };
 ```
 
-与此同时，我们还声明了两个静态方法，用来获取 `Dog`  或 `Cat` 的指针，同时，我们希望 `Dog` 和 `Cat` 是以 lazy 的方式进行初始化的，即下面的 singleton.cc 文件
+与此同时，我们还声明了两个静态方法，用来获取 `Dog`  或 `Cat` 的指针，并且，我们希望 `Dog` 和 `Cat` 是以 lazy 的方式进行初始化的，即下面的 singleton.cc 文件的实现
 
 ```
 // singleton.cc
