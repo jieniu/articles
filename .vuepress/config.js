@@ -44,7 +44,7 @@ module.exports = {
         'ready_for_machine_learning'
       ],
       '/math/': [
-        '3.linear_transformation'
+        'linear_transformation'
       ],
       '/mysql_notes/': [
         '1.MySQL架构'
@@ -52,20 +52,17 @@ module.exports = {
       '/springboot/': [
         'spring_boot_thread_pool_timer'
       ],
-    },
-      markdown: {
-          // options for markdown-it-anchor
-          anchor: { permalink: true },
-          // options for markdown-it-toc
-          toc: { includeLevel: [1,2] },
-          config: md => {
-              // use more markdown-it plugins!
-              md.set({html: true})
-              md.use(require("markdown-it-katex"))
-              md.use(require('markdown-it-task-lists'))
-              md.use(require("markdown-it-plantuml"))
-              md.use(require("markdown-it-admonition"))
-          }
+    }
+  },
+  markdown: {
+      // options for markdown-it-anchor
+      anchor: { permalink: true },
+      // options for markdown-it-toc
+      toc: { includeLevel: [1,2] },
+      config: md => {
+          // use more markdown-it plugins!
+          md.set({html: true})
+          md.use(require("markdown-it-katex"))
       }
   }
 }
