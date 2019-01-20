@@ -1,6 +1,6 @@
 module.exports = {
   title: '程序员在深圳',
-  description: '一个程序员的工作日志',
+  description: '一个程序员的工作学习日志',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
 	['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css' }],
@@ -19,6 +19,7 @@ module.exports = {
       { text: 'math', link: '/math/' }, 
       { text: 'mysql', link: '/mysql_notes/' }, 
       { text: 'Spring Boot', link: '/springboot/' }, 
+      { text: 'tools', link: '/tools/' }, 
       // 下拉列表
       {
         text: 'GitHub',
@@ -51,6 +52,9 @@ module.exports = {
       ],
       '/springboot/': [
         'spring_boot_thread_pool_timer'
+      ],
+      '/tools/': [
+        'vuepress_website'
       ],
     }
   },
