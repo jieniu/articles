@@ -188,7 +188,7 @@ public class MyServiceTest {
 
 
 
- 以上代码均通过测试，你可以下载该代码进行学习：
+ 以上代码均通过测试，你可以在这里下载：https://github.com/jieniu/articles/tree/master/springboot/powermock
 
 参考：
 
