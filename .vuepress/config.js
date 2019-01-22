@@ -39,7 +39,8 @@ module.exports = {
         'virtual_function_and_constructor'
       ],
       '/java/': [
-        'understanding_collections_threadsafe'
+        'understanding_collections_threadsafe',
+        'springboot/powermock_and_unittest'
       ],
       '/AI/': [
         'ready_for_machine_learning'
