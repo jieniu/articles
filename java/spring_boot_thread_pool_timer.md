@@ -149,7 +149,7 @@ Spring Boot 是一个只写几个配置，就可以完成很多功能的 Java �
 
 5. demo 下载
 
-   [在这里下载 demo 源码](https://github.com/jieniu/articles/tree/master/springboot/thread_pool)，运行试一下吧
+   [在这里下载 demo 源码](https://github.com/jieniu/articles/tree/master/java/thread_pool)，运行试一下吧
 
 
 参考：

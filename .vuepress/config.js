@@ -18,7 +18,6 @@ module.exports = {
       { text: 'AI', link: '/AI/' }, 
       { text: 'math', link: '/math/' }, 
       { text: 'mysql', link: '/mysql_notes/' }, 
-      { text: 'Spring Boot', link: '/springboot/' }, 
       { text: 'tools', link: '/tools/' }, 
       // 下拉列表
       {
@@ -40,6 +39,7 @@ module.exports = {
       ],
       '/java/': [
         'understanding_collections_threadsafe',
+        'spring_boot_thread_pool_timer',
         'springboot/powermock_and_unittest'
       ],
       '/AI/': [
@@ -50,9 +50,6 @@ module.exports = {
       ],
       '/mysql_notes/': [
         '1.MySQL架构'
-      ],
-      '/springboot/': [
-        'spring_boot_thread_pool_timer'
       ],
       '/tools/': [
         'vuepress_website'
