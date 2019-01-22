@@ -1,6 +1,6 @@
-# UnitTest 和 PowerMock
+# Java 中的 UnitTest 和 PowerMock
 
-学习一门计算机语言，我觉得除了学习它的语法外，最重要的就是要学习怎么在这个语言环境下进行单元测试，因为单元测试能帮你提早发现错误；给你的程序加一道防护网，防止你的修改破坏了原有的功能；单元测试还能指引你写出更好的代码，毕竟不能被测试的代码一定不是好代码；除此之外，它还能增加你的自信，能勇敢的说出「我的程序没有bug」。
+学习一门计算机语言，我觉得除了学习它的语法外，最重要的就是要学习怎么在这个语言环境下进行单元测试，因为单元测试能帮你提早发现错误；同时给你的程序加一道防护网，防止你的修改破坏了原有的功能；单元测试还能指引你写出更好的代码，毕竟不能被测试的代码一定不是好代码；除此之外，它还能增加你的自信，能勇敢的说出「我的程序没有bug」。
 
 每个语言都有其常用的单元测试框架，本文主要介绍在 Java 中，我们如何使用 PowerMock，来解决我们在写单元测试时遇到的问题，从 Mock 这个词可以看出，这类问题主要是解依赖问题。
 
@@ -60,7 +60,7 @@ public class MyServiceTest {
         calendar.add(Calendar.SECOND, -4);
         Date retTime = calendar.getTime();
         
-        // spy 是对象的部分 mock
+        // spy 是对象的“部分 mock”
         MyService myService = PowerMockito.spy(new MyService());
         MyDao md = PowerMockito.mock(MyDao.class);
         PowerMockito
@@ -76,7 +76,7 @@ public class MyServiceTest {
 
 从上面代码中，我们首先构造了一个返回时间 `retTime`，模拟操作间隔的时间为 4 秒，保证了每次运行测试时该条件不会变化；然后我们用 `spy` 构造一个待测试的 `MyService` 对象，`spy` 和 `mock` 的区别是，`spy` 只会部分模拟对象，即这里只修改掉 `myService.myDao` 成员，其他的保持不变。
 
-然后我们定义了被 mock 的对象 `MyDao md` 的调用行为，当 `md.getLastOperationTime` 函数被调用时，返回我们构造的时间 `retTime`，此时测试环境就设置完毕了。
+然后我们定义了被 mock 的对象 `MyDao md` 的调用行为，当 `md.getLastOperationTime` 函数被调用时，返回我们构造的时间 `retTime`，此时测试环境就设置完毕了，这样做之后，你就可以很容易的测试 `operate` 函数了。
 
 ## 利用 PowerMock 来 mock static 函数
 
@@ -84,7 +84,7 @@ public class MyServiceTest {
 
 还是使用上面的例子，假设我们要计算当前时间和用户上一次操作时间之间的间隔，并使用 `public static  long getTimeInterval(Date lastTime)` 实现该功能，如下：
 
-```
+```js
 // CommonUtil.java
 class CommonUtil {
     public static long getTimeInterval(Date lastTime) {
@@ -97,7 +97,7 @@ class CommonUtil {
 
 我们的 `operator` 函数修改如下
 
-```
+```java
 // MyService.java
 // ...
     public boolean operate(long userId, String operation) {
@@ -113,9 +113,9 @@ class CommonUtil {
 // ...
 ```
 
-这里先从 `myDao` 获取上次操作的时间，再调用 `CommonUtil.getTimeInterval` 计算操作间隔，如果小于 5 秒，就返回 `false`，否则执行操作，并返回 `true`。那么我们的问题是，如何解掉这里 static 函数的依赖呢？我们直接看代码吧
+这里先从 `myDao` 获取上次操作的时间，再调用 `CommonUtil.getTimeInterval` 计算操作间隔，如果小于 5 秒，就返回 `false`，否则执行操作，并返回 `true`。那么我的问题是，如何解掉这里 static 函数的依赖呢？我们直接看测试代码吧
 
-```
+```js
 // MyServiceTest.java
 @PrepareForTest({MyService.class, MyDao.class, CommonUtil.class})
 public class MyServiceTest {
@@ -137,7 +137,7 @@ public class MyServiceTest {
 
 有些函数会通过修改参数所引用的对象作为输出，例如下面的这个场景，假设我们的 operation 是一个长时间执行的任务，我们需要不断轮训该任务的状态，更新到内存，并对外提供查询接口，如下代码：
 
-```
+```java
 // MyTask.java
 // ...
     public boolean run() throws InterruptedException {
@@ -163,7 +163,7 @@ public class MyServiceTest {
 
 现在我们要测试 `run()` 函数的行为，看它是否会在 `"success"` 状态下退出，那么我们就需要 mock `updateStatus` 函数，该怎么做？下面是它的测试代码：
 
-```
+```js
     @Test
     public void testUpdateStatus() throws InterruptedException {
         // 初始化被测对象
@@ -188,7 +188,7 @@ public class MyServiceTest {
 
 
 
- 以上代码均通过测试，你可以在这里下载：https://github.com/jieniu/articles/tree/master/springboot/powermock
+以上代码只为了说明应用场景，并非生产环境级别的代码，且均通过测试，为方便后续学习，你可以在这里下载：https://github.com/jieniu/articles/tree/master/springboot/powermock
 
 参考：
 
