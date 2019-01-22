@@ -40,7 +40,7 @@ module.exports = {
       '/java/': [
         'understanding_collections_threadsafe',
         'spring_boot_thread_pool_timer',
-        'springboot/powermock_and_unittest'
+        'powermock_and_unittest'
       ],
       '/AI/': [
         'ready_for_machine_learning'
