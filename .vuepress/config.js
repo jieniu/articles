@@ -15,7 +15,7 @@ module.exports = {
     nav:[
       { text: 'C++', link: '/cpp/' }, 
       { text: 'Java', link: '/java/' }, 
-      { text: 'AI', link: '/AI/' }, 
+      { text: 'algorithm', link: '/AI/' }, 
       { text: 'math', link: '/math/' }, 
       { text: 'mysql', link: '/mysql_notes/' }, 
       { text: 'tools', link: '/tools/' }, 
@@ -42,8 +42,9 @@ module.exports = {
         'spring_boot_thread_pool_timer',
         'powermock_and_unittest'
       ],
-      '/AI/': [
-        'ready_for_machine_learning'
+      '/algorithm/': [
+        'ready_for_machine_learning',
+        'reverse-integer'
       ],
       '/math/': [
         'linear_transformation'
