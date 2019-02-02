@@ -35,7 +35,8 @@ module.exports = {
         'RAII',
         'static_initialization_fiasco',
         'virtual_destructor',
-        'virtual_function_and_constructor'
+        'virtual_function_and_constructor',
+        'struct-and-class'
       ],
       '/java/': [
         'understanding_collections_threadsafe',

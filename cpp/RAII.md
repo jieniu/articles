@@ -6,7 +6,7 @@ RAII（Resource Aquisition is Initialization）技术是用对象来管理资源
 
 这个概念比较抽象，我们还是从具体的例子中学习，一般我们这样使用互斥锁：
 
-```c++
+```java
 pthread_mutex_t mu = PTHREAD_MUTEX_INITIALIZER;
 void functionA() {
     pthread_mutex_lock(&mu);
@@ -17,7 +17,7 @@ void functionA() {
 
 即，我们在使用共享资源之前通过 `pthread_mutex_lock` 加锁，并在使用完资源后，通过 `pthread_mutex_unlock` 解锁，但这种代码隐患极大，因为你不能保证锁一定会释放，例如在使用资源的时候可能抛出异常，那么这个锁就永远得不到释放，那有什么办法可以让锁一定释放，甚至自动释放呢？那就要用到今天提到的 RAII 技术：我们用对象来管理锁，对象存储在栈中，利用代码块在退出时会自动释放栈资源的特性，锁也会自动得到释放，如下面的代码：
 
-```c++
+```java
 #include <pthread.h>
 
 pthread_mutex_t mu = PTHREAD_MUTEX_INITIALIZER;
@@ -42,7 +42,7 @@ void functionA() {
 
 另一个典型的使用 RAII 技术的例子是 `std::shared_ptr`，我们通过 `shared_ptr` 来管理资源——一般是堆中申请的对象，`shared_ptr` 通过引用计数来管理指针对象，我们对 `shared_ptr` 进行复制，引用计数就加 1，相反，如果减少一个 `shared_ptr`，引用计数就减 1，当引用计数减到 0 时，会自动调用 `delete` 释放指针对象，下面的代码使用了一个 `pd` 智能指针来管理 `dog` 对象，当 `pd` 退出作用域，如果没有额外的智能指针引用 `dog`，则 `dog` 会被自动释放：
 
-```c++
+```java
 int function_A() {
 	// pd 退出作用域时，dog 会自动释放
 	std::shared_ptr<dog> pd(new dog());
@@ -85,7 +85,7 @@ int main() {
 
 最后，我们再来看一个 RAII 对象复制的问题，仍然是上文定义的锁 `Lock`，如果对 `Lock` 对象调用赋值构造函数，即：
 
-```c++
+```java
 Lock L1(&mu);
 Lock L2(L1);
 ```
