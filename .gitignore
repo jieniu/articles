@@ -4,3 +4,4 @@ target/
 .vuepress/dist
 .mvn
 node_modules
+dist

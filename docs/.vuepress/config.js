@@ -16,8 +16,24 @@ module.exports = {
   markdown: {
     lineNumbers: true // 代码块显示行号
   },
+  plugins: [
+    ['@vuepress/back-to-top', true],
+    ['@vuepress/blog'],
+    [
+      '@vuepress/last-updated',
+      {
+        transformer: (timestamp, lang) => {
+          // 不要忘了安装 moment
+          const moment = require('moment')
+          moment.locale(lang)
+          return moment(timestamp).fromNow()
+        }
+      }
+    ]
+  ],
   themeConfig: {
     repo: 'https://github.com/jieniu/articles',
+    docsDir: 'docs',
     editLinkText: '在 Github 上编辑此页',
     repoLabel: 'Github',
     // 默认为 true，设置为 false 来禁用
@@ -68,21 +84,6 @@ module.exports = {
       ],
     }
   },
-  plugins: [
-    ['@vuepress/back-to-top'],
-    ['@vuepress/blog'],
-    [
-      '@vuepress/last-updated',
-      {
-        transformer: (timestamp, lang) => {
-          // 不要忘了安装 moment
-          const moment = require('moment')
-          moment.locale(lang)
-          return moment(timestamp).fromNow()
-        }
-      }
-    ]
-  ],
   permalink: "/:year/:month/:day/:slug",
   markdown: {
     lineNumbers: true,
