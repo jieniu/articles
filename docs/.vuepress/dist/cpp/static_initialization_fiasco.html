@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>为什么不要使用全局变量 | 程序员在深圳</title>
+    <meta name="description" content="一个程序员的工作学习日志">
+    <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+    
+    <link rel="preload" href="/assets/css/0.styles.14fa570c.css" as="style"><link rel="preload" href="/assets/js/app.12b95bc1.js" as="script"><link rel="preload" href="/assets/js/11.ab2a631a.js" as="script"><link rel="prefetch" href="/assets/js/10.870aafa0.js"><link rel="prefetch" href="/assets/js/12.eb0521f2.js"><link rel="prefetch" href="/assets/js/13.6cc4e31e.js"><link rel="prefetch" href="/assets/js/14.f1391346.js"><link rel="prefetch" href="/assets/js/15.693a2a52.js"><link rel="prefetch" href="/assets/js/16.6a6236a3.js"><link rel="prefetch" href="/assets/js/17.072abdd2.js"><link rel="prefetch" href="/assets/js/18.459c8d32.js"><link rel="prefetch" href="/assets/js/19.b0fa80c2.js"><link rel="prefetch" href="/assets/js/2.9f734292.js"><link rel="prefetch" href="/assets/js/20.e1cc392a.js"><link rel="prefetch" href="/assets/js/21.bc4ced03.js"><link rel="prefetch" href="/assets/js/22.15e90473.js"><link rel="prefetch" href="/assets/js/23.1e842e22.js"><link rel="prefetch" href="/assets/js/24.89be4fb3.js"><link rel="prefetch" href="/assets/js/25.c0a4f010.js"><link rel="prefetch" href="/assets/js/26.c1daf4e9.js"><link rel="prefetch" href="/assets/js/3.02ea72ff.js"><link rel="prefetch" href="/assets/js/4.d7229487.js"><link rel="prefetch" href="/assets/js/5.4837771a.js"><link rel="prefetch" href="/assets/js/6.5f57bf07.js"><link rel="prefetch" href="/assets/js/7.f50df1bf.js"><link rel="prefetch" href="/assets/js/8.3a66950f.js"><link rel="prefetch" href="/assets/js/9.795a67d8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.14fa570c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">程序员在深圳</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/cpp/" class="nav-link router-link-active">C++</a></div><div class="nav-item"><a href="/java/" class="nav-link">Java</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">algorithm</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/AI/" class="nav-link">articles</a></li><li class="dropdown-item"><!----> <a href="https://github.com/jieniu/LeetCode.git" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MyLeeCode
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="/math/" class="nav-link">math</a></div><div class="nav-item"><a href="/mysql_notes/" class="nav-link">mysql</a></div><div class="nav-item"><a href="/tools/" class="nav-link">tools</a></div> <a href="https://github.com/jieniu/articles" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/cpp/" class="nav-link router-link-active">C++</a></div><div class="nav-item"><a href="/java/" class="nav-link">Java</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">algorithm</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/AI/" class="nav-link">articles</a></li><li class="dropdown-item"><!----> <a href="https://github.com/jieniu/LeetCode.git" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MyLeeCode
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="/math/" class="nav-link">math</a></div><div class="nav-item"><a href="/mysql_notes/" class="nav-link">mysql</a></div><div class="nav-item"><a href="/tools/" class="nav-link">tools</a></div> <a href="https://github.com/jieniu/articles" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/cpp/assignment_to_self_in_assignment_operator.html" class="sidebar-link">复制操作符怎么写</a></li><li><a href="/cpp/exception_and_destructor.html" class="sidebar-link">异常处理和析构函数</a></li><li><a href="/cpp/RAII.html" class="sidebar-link">RAII 技术（Resource Aquisition is Initialization）</a></li><li><a href="/cpp/static_initialization_fiasco.html" class="active sidebar-link">为什么不要使用全局变量</a></li><li><a href="/cpp/virtual_destructor.html" class="sidebar-link">虚析构函数和智能指针</a></li><li><a href="/cpp/virtual_function_and_constructor.html" class="sidebar-link">避免在构造函数或析构函数中调用虚函数</a></li><li><a href="/cpp/struct-and-class.html" class="sidebar-link">Struct 和 Class 的约定</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="为什么不要使用全局变量"><a href="#为什么不要使用全局变量" aria-hidden="true" class="header-anchor">#</a> 为什么不要使用全局变量</h1> <p>在写程序时，我们都知道一条规范：不要使用全局变量。至于为什么，有可能是因为它会污染命名空间，也有可能是因为它会造成程序的不确定性，本文主要使用一个例子，来说明全局变量是如何让程序变得不确定的。</p> <p>我们先定义两个类，一个 <code>Cat</code>，一个 <code>Dog</code>，如下是 <code>cat.h</code> 和 <code>cat.cc</code> 文件</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>// cat.h
+#include &lt;iostream&gt;
+using namespace std;
+
+class Cat;
+extern Cat c;
+
+class Cat {
+public:
+    Cat(char* name);
+    void meow();
+private:
+    char* _name;
+};
+
+// cat.cc
+#include &quot;cat.h&quot;
+#include &quot;dog.h&quot;
+
+Cat c(&quot;mimi&quot;);
+Cat::Cat(char* name) {
+    cout &lt;&lt; &quot;construct cat&quot; &lt;&lt; endl;
+    _name = name;
+}
+
+void Cat::meow() {
+    cout &lt;&lt; &quot;cat &quot; &lt;&lt; _name &lt;&lt; &quot; meow&quot; &lt;&lt; endl;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p><code>Cat</code> 类很简单，只有一个成员 <code>_name</code>，它是一个指针变量，且通过 <code>meow</code> 方法把它打印到屏幕上，同时，我们还定义了一个全局变量 <code>Cat c(&quot;mimi&quot;);</code>，同样的，<code>Dog</code> 类的定义也很简单，如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// dog.h
+#include &lt;iostream&gt;
+using namespace std;
+
+class Dog;
+extern Dog d;
+
+class Dog {
+public:
+    Dog(char* name);
+    void bark();
+private:
+    char* _name;
+};
+
+// dog.cc
+#include &quot;dog.h&quot;
+#include &quot;cat.h&quot;
+
+Dog d(&quot;kobe&quot;);
+Dog::Dog(char* name) {
+    cout &lt;&lt; &quot;construct dog&quot; &lt;&lt; endl;
+    _name = name;
+}                                                                   
+                                                                    
+void Dog::bark() {                                                  
+    cout &lt;&lt; &quot;dog &quot; &lt;&lt; _name &lt;&lt; &quot; bark&quot; &lt;&lt; endl;                     
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p>我们给 <code>Dog</code> 也定义了一个全局变量 <code>d(&quot;kobe&quot;);</code>，此时，我们修改一下 <code>Cat</code> 的构造函数，在里面引用全局变量 <code>d</code>，看看会发生什么</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Cat::Cat(char* name) {
+    cout &lt;&lt; &quot;construct cat&quot; &lt;&lt; endl;
+    _name = name;
+    d.bark();
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>编译运行前，别忘了我们的入口文件 <code>main.cc</code>，如下</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>int main() {
+    return 0;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>现在，我们将其进行编译运行</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>...
+g++ -o main main.o cat.o dog.o -std=c++11  // 编译时的输出，说明了链接顺序
+$ ./main
+construct cat
+// [1]    50759 segmentation fault  ./main 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>可以看到程序崩溃了，崩溃原因是我们刚才在 <code>Cat</code> 构造函数中增加的一行调用全局变量的代码，因为在调用这行代码时，全局变量 <code>d</code> （实际上是 <code>d._name</code> ）还没初始化。</p> <p>而全局变量的初始化顺序是由编译器决定的，所以如果我们的全局变量间又有互相依赖的话，就很容易造成程序崩溃。</p> <p>避免使用全局变量的方法也有很多，其中最广泛的应数 Singleton 模式了，针对上面的代码，我们可以定义一个 <code>Singleton</code> 类，其中包含 <code>Cat</code> 和 <code>Dog</code> 的静态指针，如下</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>// singleton.h
+class Cat;
+class Dog;
+class Singleton {
+    static Dog* pd;
+    static Cat* pc;
+public:
+    ~Singleton();
+
+    static Dog* getDog();
+    static Cat* getCat();
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>与此同时，我们还声明了两个静态方法，用来获取 <code>Dog</code>  或 <code>Cat</code> 的指针，并且，我们希望 <code>Dog</code> 和 <code>Cat</code> 是以 lazy 的方式进行初始化的，即下面的 singleton.cc 文件的实现</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// singleton.cc
+#include &quot;singleton.h&quot;
+#include &quot;dog.h&quot;
+#include &quot;cat.h&quot;
+
+Dog* Singleton::pd = 0;
+Cat* Singleton::pc = 0;
+Singleton::~Singleton() {
+    delete pd;
+    delete pc;
+    pd = 0;
+    pc = 0;
+}
+Dog* Singleton::getDog() { 
+    if (pd == 0) {
+        pd = new Dog(&quot;kobe&quot;);  
+    }
+    return pd;
+}
+Cat* Singleton::getCat() {
+    if (pc == 0) {
+        pc = new Cat(&quot;mimi&quot;);
+    }
+    return pc;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>可以看到初始化 <code>Cat</code> 和 <code>Dog</code> 的时机是在第一次调用 <code>getCat</code> 和 <code>getDog</code> 时。现在你就可以删掉程序中的全局变量了，当你需要使用 <code>Cat</code> 对象或 <code>Dog</code> 对象时，直接调用 <code>Singleton::getCat()</code> 或 <code>Singleton::getDog()</code> 即可。</p> <p>参考：</p> <ul><li>https://www.youtube.com/watch?v=hE77OSTE2J0&amp;t=87s</li></ul></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/jieniu/articles/edit/master/cpp/static_initialization_fiasco.md" target="_blank" rel="noopener noreferrer">在 Github 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/cpp/RAII.html" class="prev">
+          RAII 技术（Resource Aquisition is Initialization）
+        </a></span> <span class="next"><a href="/cpp/virtual_destructor.html">
+          虚析构函数和智能指针
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.12b95bc1.js" defer></script><script src="/assets/js/11.ab2a631a.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>复制操作符怎么写 | 程序员在深圳</title>
+    <meta name="description" content="一个程序员的工作学习日志">
+    <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+    
+    <link rel="preload" href="/assets/css/0.styles.14fa570c.css" as="style"><link rel="preload" href="/assets/js/app.12b95bc1.js" as="script"><link rel="preload" href="/assets/js/9.795a67d8.js" as="script"><link rel="prefetch" href="/assets/js/10.870aafa0.js"><link rel="prefetch" href="/assets/js/11.ab2a631a.js"><link rel="prefetch" href="/assets/js/12.eb0521f2.js"><link rel="prefetch" href="/assets/js/13.6cc4e31e.js"><link rel="prefetch" href="/assets/js/14.f1391346.js"><link rel="prefetch" href="/assets/js/15.693a2a52.js"><link rel="prefetch" href="/assets/js/16.6a6236a3.js"><link rel="prefetch" href="/assets/js/17.072abdd2.js"><link rel="prefetch" href="/assets/js/18.459c8d32.js"><link rel="prefetch" href="/assets/js/19.b0fa80c2.js"><link rel="prefetch" href="/assets/js/2.9f734292.js"><link rel="prefetch" href="/assets/js/20.e1cc392a.js"><link rel="prefetch" href="/assets/js/21.bc4ced03.js"><link rel="prefetch" href="/assets/js/22.15e90473.js"><link rel="prefetch" href="/assets/js/23.1e842e22.js"><link rel="prefetch" href="/assets/js/24.89be4fb3.js"><link rel="prefetch" href="/assets/js/25.c0a4f010.js"><link rel="prefetch" href="/assets/js/26.c1daf4e9.js"><link rel="prefetch" href="/assets/js/3.02ea72ff.js"><link rel="prefetch" href="/assets/js/4.d7229487.js"><link rel="prefetch" href="/assets/js/5.4837771a.js"><link rel="prefetch" href="/assets/js/6.5f57bf07.js"><link rel="prefetch" href="/assets/js/7.f50df1bf.js"><link rel="prefetch" href="/assets/js/8.3a66950f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.14fa570c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">程序员在深圳</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/cpp/" class="nav-link router-link-active">C++</a></div><div class="nav-item"><a href="/java/" class="nav-link">Java</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">algorithm</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/AI/" class="nav-link">articles</a></li><li class="dropdown-item"><!----> <a href="https://github.com/jieniu/LeetCode.git" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MyLeeCode
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="/math/" class="nav-link">math</a></div><div class="nav-item"><a href="/mysql_notes/" class="nav-link">mysql</a></div><div class="nav-item"><a href="/tools/" class="nav-link">tools</a></div> <a href="https://github.com/jieniu/articles" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/cpp/" class="nav-link router-link-active">C++</a></div><div class="nav-item"><a href="/java/" class="nav-link">Java</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">algorithm</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/AI/" class="nav-link">articles</a></li><li class="dropdown-item"><!----> <a href="https://github.com/jieniu/LeetCode.git" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  MyLeeCode
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="/math/" class="nav-link">math</a></div><div class="nav-item"><a href="/mysql_notes/" class="nav-link">mysql</a></div><div class="nav-item"><a href="/tools/" class="nav-link">tools</a></div> <a href="https://github.com/jieniu/articles" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/cpp/assignment_to_self_in_assignment_operator.html" class="active sidebar-link">复制操作符怎么写</a></li><li><a href="/cpp/exception_and_destructor.html" class="sidebar-link">异常处理和析构函数</a></li><li><a href="/cpp/RAII.html" class="sidebar-link">RAII 技术（Resource Aquisition is Initialization）</a></li><li><a href="/cpp/static_initialization_fiasco.html" class="sidebar-link">为什么不要使用全局变量</a></li><li><a href="/cpp/virtual_destructor.html" class="sidebar-link">虚析构函数和智能指针</a></li><li><a href="/cpp/virtual_function_and_constructor.html" class="sidebar-link">避免在构造函数或析构函数中调用虚函数</a></li><li><a href="/cpp/struct-and-class.html" class="sidebar-link">Struct 和 Class 的约定</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="复制操作符怎么写"><a href="#复制操作符怎么写" aria-hidden="true" class="header-anchor">#</a> 复制操作符怎么写</h1> <p>C++ 中的操作符重载可以让我们的代码更符合人们的阅读习惯，而 <code>operator=</code> 赋值操作符又是最常被重载的操作符。本篇主要谈到我们在写 <code>operator=</code> 时可能会遇到的复制相同对象的问题，及我们该如何解决它。</p> <p>对于「复制自己」，你肯定不会写这样的代码</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Dog a;
+a = a;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>但你可能会写这样的代码</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>dogs[i] = dogs[j];
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>而当 <code>i</code> 和 <code>j</code> 相等时，你便无意间写出了「复制自己」的代码，但到底「复制自己」会出现什么问题呢？先来看下下面这段代码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Collar{};
+class Dog {
+    Collar* pCollar;
+    
+    Dog&amp; operator=(const Dog&amp; rhs) {
+        delete pCollar;
+        pCollar = new Collar(*rhs.pCollar);
+        return *this;
+    }
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>上面这段赋值操作符的实现，首先就把指针 <code>pCollar</code> 给释放了，如果传入的对象就是自己，那么 <code>pCollar = new Collar(*rhs.pCollar)</code> 这一行中的 <code>rhs.pCollar</code> 就会引用一个被释放的指针，这会对程序造成灾难性的结果。</p> <p>于是，为避免「复制自己」的问题，我们可以在 <code>delete</code> 之前加一个条件判断，如下</p> <div class="language-c++ line-numbers-mode"><pre class="language-text"><code>// ...
+    Dog&amp; operator=(const Dog&amp; rhs) {
+        if (this == &amp;rhs) {
+            return *this;
+        }
+        
+        delete pCollar;
+        pCollar = new Collar(*rhs.pCollar);
+        return *this;
+    }
+// ... 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>但这还没完，这里还有一个漏洞，如果 <code>new Collar(*rhs.pCollar)</code> 抛出异常，则该对象的 <code>pCollar</code> 由于被释放了，而变成了一个”野指针“，这也会给程序带来无法预期的结果。所以更为安全的写法是这样的：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// ...
+    Dog&amp; operator=(const Dog&amp; rhs) {
+        if (this == &amp;rhs) {
+            return *this;
+        }
+        
+        Collar* pOriginCollar = pCollar;
+        pCollar = new Collar(*rhs.pCollar);
+        delete pOriginCollar;
+        return *this;
+    }
+// ...
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>可以看到，即便 <code>new Collar</code> 抛出了异常，<code>pCollar</code> 所指向的内容仍然不变。</p> <p>此外，我们还有另外一种解决「复制自己」的方案，即面向对象中常用的委派（delegate），例如这里要复制的 <code>Collar</code> 对象，不是在宿主 <code>Dog</code> 对象中完成，而是把复制的动作委派给 <code>Collar</code>  的复制构造函数去完成，这样做的好处是各个类的代码各司其职，复杂度降低，更不易出错，如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>class Collar {
+    int price;
+public:
+	Collar &amp;operator=(const Collar&amp; rhs) {
+    	if (this == &amp;rhs) {
+        	return *this;
+    	}
+    	price = rhs.price;
+    	return *this;
+	}
+};
+
+class Dog {
+    Collar* pCollar;
+    Dog&amp; operator=(const Dog&amp; rhs) {
+        *pCollar = *rhs.pCollar; // member by member copy of Collars
+        return *this;
+    }
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>以上，请记住一点</p> <blockquote><p>在写复制操作符时，要避免复制自己。</p></blockquote> <p>参考：</p> <p>https://www.youtube.com/watch?v=4qhz7E59QBs&amp;index=9&amp;list=PLE28375D4AC946CC3</p></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/jieniu/articles/edit/master/cpp/assignment_to_self_in_assignment_operator.md" target="_blank" rel="noopener noreferrer">在 Github 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></div> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/cpp/exception_and_destructor.html">
+          异常处理和析构函数
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.12b95bc1.js" defer></script><script src="/assets/js/9.795a67d8.js" defer></script>
+  </body>
+</html>
