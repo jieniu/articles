@@ -3,6 +3,7 @@
 ##  LeeCode 题解
 
 * [Reverse Integer](/AI/reverse-integer.md)
+* [Longest Substring Without Repeating Characters](longest-substring.md)
 
 ## Machine Learning
 

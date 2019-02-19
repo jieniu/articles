@@ -1,4 +1,3 @@
-const moment = require('moment');
 module.exports = {
   title: '程序员在深圳',
   description: '一个程序员的工作学习日志',
@@ -19,17 +18,7 @@ module.exports = {
   plugins: [
     ['@vuepress/back-to-top', true],
     ['@vuepress/blog'],
-    [
-      '@vuepress/last-updated',
-      {
-        transformer: (timestamp, lang) => {
-          // 不要忘了安装 moment
-          const moment = require('moment')
-          moment.locale(lang)
-          return moment(timestamp).fromNow()
-        }
-      }
-    ]
+    ['@vuepress/last-updated']
   ],
   themeConfig: {
     repo: 'https://github.com/jieniu/articles',
@@ -69,9 +58,10 @@ module.exports = {
         'spring_boot_thread_pool_timer',
         'powermock_and_unittest'
       ],
-      '/algorithm/': [
-        'ready_for_machine_learning',
-        'reverse-integer'
+      '/AI/': [
+        'reverse-integer',
+        'longest-substring',
+        'ready_for_machine_learning'
       ],
       '/math/': [
         'linear_transformation'

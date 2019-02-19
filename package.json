@@ -1,18 +1,9 @@
 {
-    "name": "articles",
-    "version": "1.0.0",
-    "main": "index.js",
-    "license": "MIT",
     "scripts": {
         "docs:dev": "vuepress dev docs",
         "docs:build": "vuepress build docs"
     },
     "dependencies": {
-        "markdown-it-katex": "^2.0.3",
-        "moment": "^2.24.0"
-    },
-    "devDependencies": {
-        "@vuepress/plugin-back-to-top": "^1.0.0-alpha.0",
-        "@vuepress/plugin-blog": "^1.0.0-alpha.0"
+        "markdown-it-katex": "^2.0.3"
     }
 }

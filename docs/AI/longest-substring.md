@@ -1,0 +1,109 @@
+# Longest Substring Without Repeating Characters 题解
+
+## 问题描述
+
+输入一个字符串，找到其中最长的不重复子串
+
+例1：
+
+>输入："abcabcbb"
+>
+>输出：3
+>
+>解释：最长非重复子串为"abc"
+
+例2：
+
+> 输入："bbbbb"
+>
+> 输出：1
+>
+> 解释：最长非重复子串为"b"
+
+例3：
+
+> 输入："pwwkew"
+>
+> 输出：3
+>
+> 解释：最长非重复子串为"wke"
+
+## 解题思路
+
+本题采用「滑动窗口法」可以达到较理想的时间复杂度 O(n)，滑动窗口指的是当前非重复子串所在的窗口，此滑动窗口有两种操作方法
+
+1. 通过检查下一个字符是否重复，如未重复，则将窗口向右扩大
+2. 发现重复字符，则将窗口左边界右移，相当于将窗口向右缩小
+
+上面的操作比较容易理解，唯一需要注意的是第 2 点中，当发现重复字符时，窗口左边界向右移动几个单位，我们可以看一个示意图：
+
+```
++---------+ 
+| a b c d | e d x y z
++---------+
+ 
++-----------+ 
+| a b c d e | d x y z
++-----------+
+
+        +-----+ 
+a b c d | e d | x y z
+        +-----+
+```
+
+假设输入字符串为 `"abcdedxyz"`，一直到我们遍历到字符 `e` 时，均未发现重复的字符串，至此对窗口进行的操作都是向右扩大，当检查到下一个字符 `d` 时，由于前面字符串中已经出现过该字符，所以窗口左边界需要进行右移，移动的位置、即新子串窗口的起始下标，正好在第一个重复字符的右边，如图所示为字符 `e` 所在的位置。
+
+至此，我们可以开始写程序了：
+
+```python
+def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        maxlen = 0
+        current_substring = [None]*128
+        current_substring_len = 0
+        begin_index = 0
+        for i in s:
+            stoi = ord(i)
+            if current_substring[stoi] is None or current_substring[stoi] < begin_index:
+                current_substring[stoi] = begin_index + current_substring_len
+                current_substring_len += 1
+            else:
+                if maxlen < current_substring_len:
+                    maxlen = current_substring_len 
+                
+                sub_len = current_substring[stoi] - begin_index + 1
+                begin_index = current_substring[stoi] + 1
+                current_substring_len -= sub_len
+
+                current_substring[stoi] = current_substring_len + begin_index
+                current_substring_len += 1
+
+        if maxlen < current_substring_len:
+            maxlen = current_substring_len
+        return maxlen
+```
+
+以上代码中，`current_substring` 是一个缓冲区，用来存放当前子字符串，缓冲区声明为 128 个是为了让数组的下标空间能容纳 128 个 ASCII 字符，即这里用数组的下标来表示字符，这样做的好处是可以很快的知道某个字符是否出现重复，数组的内容我们填的是该字符对应的下标，例如字符串 `"abcde"` 填到 `current_substring` 中则为：
+
+```
+            index:   0..97  98  99  100 101 ..
+                   +---+---+---+---+---+---+---+
+current_substring: |...| 0 | 1 | 2 | 3 | 4 |...|
+                   +---+---+---+---+---+---+---+
+```
+
+我们用变量 `begin_index` 来记录当前窗口在字符串中的起始位置，而 `current_substring_len` 用来记录当前窗口的长度。for 循环是对字符串的遍历。
+
+首先将字符转化为其对应的整数 `stoi`，检查 `stoi` 中的内容是否为空，或其存储的位置是否在窗口的左边，如是则表示该字符在 `begin_index` 之后未出现过，非重复子串可以继续累加。
+
+否则表示出现重复，出现重复时，需要对下一个滑动窗口进行初始化，上文中说了，要分别更新 `begin_index` 和 `current_substring_len` 两个值，代表了滑动窗口左边界向右移动。
+
+最后，我们需要在每一次窗口改变时，或在结束遍历时，判断当前子字符串的长度是否是最长的，并将最长串存储在 `maxlen` 中，作为结果返回。
+
+
+
+原题链接：https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
