@@ -51,7 +51,8 @@ module.exports = {
         'static_initialization_fiasco',
         'virtual_destructor',
         'virtual_function_and_constructor',
-        'struct-and-class'
+        'struct-and-class',
+        'resource-managing-class'
       ],
       '/java/': [
         'understanding_collections_threadsafe',

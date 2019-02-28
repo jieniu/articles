@@ -11,3 +11,4 @@
 * [虚析构函数和智能指针](/cpp/virtual_destructor.md)
 * [避免在构造函数或析构函数中调用虚函数](/cpp/virtual_function_and_constructor.md)
 * [Struct 和 Class 的约定](/cpp/struct-and-class.md)
+* [指针类型成员的陷阱](/cpp/resource-managing-class.md)
