@@ -60,8 +60,9 @@ module.exports = {
         'powermock_and_unittest'
       ],
       '/AI/': [
-        'reverse-integer',
-        'longest-substring',
+        '1.two-sum',
+        '3.longest-substring',
+        '7.reverse-integer',
         'ready_for_machine_learning'
       ],
       '/math/': [

@@ -2,8 +2,15 @@
 
 ##  LeeCode 题解
 
-* [Reverse Integer](/AI/reverse-integer.md)
-* [Longest Substring Without Repeating Characters](longest-substring.md)
+* [1. Two Sum](/AI/1.two-sum.md)
+
+* [2. Longest Substring Without Repeating Characters](3.longest-substring.md)
+
+* [7. Reverse Integer](/AI/7.reverse-integer.md)
+
+  
+
+  
 
 ## Machine Learning
 
