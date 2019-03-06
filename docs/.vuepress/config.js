@@ -61,6 +61,7 @@ module.exports = {
       ],
       '/AI/': [
         '1.two-sum',
+        '2.add-two-numbers',
         '3.longest-substring',
         '7.reverse-integer',
         'ready_for_machine_learning'
