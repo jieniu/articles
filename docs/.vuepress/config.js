@@ -52,7 +52,8 @@ module.exports = {
         'virtual_destructor',
         'virtual_function_and_constructor',
         'struct-and-class',
-        'resource-managing-class'
+        'resource-managing-class',
+        'user-defined-type-conversion'
       ],
       '/java/': [
         'understanding_collections_threadsafe',
