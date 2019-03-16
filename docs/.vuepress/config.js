@@ -63,6 +63,7 @@ module.exports = {
         '1.two-sum',
         '2.add-two-numbers',
         '3.longest-substring',
+        '4.median-of-two-sorted-arrays',
         '7.reverse-integer',
         'ready_for_machine_learning'
       ],

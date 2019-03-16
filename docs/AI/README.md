@@ -8,6 +8,8 @@
 
 * [3. Longest Substring Without Repeating Characters](3.longest-substring.md)
 
+* [4. Median of Two Sorted Arrays](4.median-of-two-sorted-arrays.md)
+
 * [7. Reverse Integer](/AI/7.reverse-integer.md)
 
   
