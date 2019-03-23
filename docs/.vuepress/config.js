@@ -75,7 +75,9 @@ module.exports = {
         '1.MySQL架构'
       ],
       '/tools/': [
-        'vuepress_website'
+        'vuepress_website',
+        'python-virtualenv-commands',
+        'virtualenv-migration'
       ],
     }
   },
