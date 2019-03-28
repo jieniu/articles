@@ -21,3 +21,5 @@
 * [指针类型成员的陷阱](/cpp/resource-managing-class.md)
 
 * [用户自定义的隐式类型转换](/cpp/user-defined-type-conversion.md)
+
+* [显示类型转换（Casting）](/cpp/all-castings-considered.md)

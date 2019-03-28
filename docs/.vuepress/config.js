@@ -53,7 +53,8 @@ module.exports = {
         'virtual_function_and_constructor',
         'struct-and-class',
         'resource-managing-class',
-        'user-defined-type-conversion'
+        'user-defined-type-conversion',
+        'all-castings-considered'
       ],
       '/java/': [
         'understanding_collections_threadsafe',
