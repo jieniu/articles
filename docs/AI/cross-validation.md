@@ -9,13 +9,13 @@
 
 但这样选择数据并不能避免偶然性，即在某些情况下，用这最后的 1/4 数据进行测试，刚好能得到比较好的效果，而如果我们改为用前 25% 的数据测试，后 75% 的数据训练的话，效果却会大打折扣，如下所示，情况1和情况2之间只存在数据切分的区别，但情况1的测试结果要比情况2好很多。
 
-![Untitled Diagram](/Users/fengyajie/Downloads/Untitled Diagram.png)
+![](https://github.com/jieniu/articles/blob/master/.vuepress/public/cv1.png?raw=true)
 
 为了测试数据的偶然性，更好的做法便是采用「交叉验证」，还是以切分 4 分数据为例，交叉验证的做法是，对于同一个算法，同时训练出 4 个模型，每个模型的测试数据都不同（例如模型 1 选用第 1 份，模型 2 选用第 2 份，以此类推），在所有模型都完成测试后，再对这 4 个模型的评估结果求平均，便可以得到一个相对稳定且更有说服力的算法。
 
 举个具体的例子，假设我们的模型采用决策树算法，该算法有个超参数是树的深度 `height`，我们可以将其设为 2，也可以设为 3，但不清楚设哪个数比较好，此时我们就可以使用「交叉验证」来帮我们决策，首先还是将数据 4 等分，对每一个参数值，我们都训练 4 次，输出 4 种可能的测试结果，如下图所示
 
-![Untitled Diagram (1)](/Users/fengyajie/Downloads/Untitled Diagram (2).png)
+![](https://github.com/jieniu/articles/blob/master/.vuepress/public/cv2.png?raw=true)
 
 最后，我们根据每个参数下的测试结果，算出它们的平均值
 
