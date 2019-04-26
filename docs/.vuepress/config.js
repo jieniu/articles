@@ -67,7 +67,8 @@ module.exports = {
         '3.longest-substring',
         '4.median-of-two-sorted-arrays',
         '7.reverse-integer',
-        'ready_for_machine_learning'
+        'ready_for_machine_learning',
+        'cross-validation'
       ],
       '/math/': [
         'linear_transformation'
