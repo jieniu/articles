@@ -18,5 +18,8 @@
 ## Machine Learning
 
 * [Machine Leanring 环境准备——搭建 Jupyter Notebook](/AI/ready_for_machine_learning.md)
-* [通俗解释「交叉验证」(Cross Validation)](/AI/cross-validation.md)
+
+
+
+* [理解「交叉验证」(Cross Validation)](/AI/cross-validation.md)
 
