@@ -10,6 +10,8 @@
 
 * [4. Median of Two Sorted Arrays](4.median-of-two-sorted-arrays.md)
 
+* [5. Longest Palindromic Substring](5.longest-palindromic-substring.md)
+
 * [7. Reverse Integer](/AI/7.reverse-integer.md)
 
   
