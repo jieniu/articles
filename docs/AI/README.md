@@ -25,3 +25,7 @@
 
 * [理解「交叉验证」(Cross Validation)](/AI/cross-validation.md)
 
+
+
+* [二分类评估，从混淆矩阵说起](/AI/confusion-matrix.md)
+

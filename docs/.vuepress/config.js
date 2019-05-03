@@ -69,7 +69,8 @@ module.exports = {
         '5.longest-palindromic-substring',
         '7.reverse-integer',
         'ready_for_machine_learning',
-        'cross-validation'
+        'cross-validation',
+        'confusion-matrix'
       ],
       '/math/': [
         'linear_transformation'
