@@ -6,7 +6,7 @@
 
 要了解 AUC，我们需要从另外一个概念——混淆矩阵（Confusion Matrix）说起，混淆矩阵是一个 2 维方阵，它主要用于评估二分类问题（例如：预测患或未患心脏病、股票涨或跌等这种只有两类情况的问题）的好坏。你可能会问多分类问题怎么办？实际上，多分类问题依然可以转换为二分类问题进行处理。下图是一个用于评判是否患有心脏病的混淆矩阵：
 
-![cm1](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/cm1.png)
+![cm1](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/cm1.png?raw=true)
 
 纵向看混淆矩阵，它体现了真实情况下，患病和未患病的人数，上图中，真实患心脏病的人数为 True Positive + False Negative，未患心脏病的人数为 False Positive + True Negative；类似的，横向看混淆矩阵，它体现了模型预测出来患心脏病的人数为 True Positive + False Positive，而预测未患心脏病的人数为 False Negative + True Negative。
 
@@ -49,19 +49,19 @@ Specificity 这个词有"免疫"的意思，能和未患病相关联，所以也
 
 下面我们来看一个具体的例子，假设我们对老鼠做研究，希望通过老鼠的体重来预测其患心脏病的概率，我们采用逻辑回归算法来建模，下图是预测结果，图中有 10 个老鼠样本点，其中红色点代表实际健康的老鼠，蓝色点代表实际患病的老鼠，这些点用一条逻辑回归曲线拟合，图中还有一条 P=0.5 的直线用来表示阈值为 0.5，可以看出，高于 P=0.5 的 5 只老鼠被预测为患病，而其他 5 只老鼠被预测为健康，预测成功率（Accuracy）为 80%：
 
-![](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/image-20190430205818287.png)
+![](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/image-20190430205818287.png?raw=true)
 
 下面我们通过以上数据，来画一条 ROC 曲线。首先取阈值为 1，此时所有的老鼠都被预测为未患病，根据样本真实患病情况，我们可以得到如下混淆矩阵
 
-![](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/lr_cm.png)
+![](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/lr_cm.png?raw=true)
 
 根据上述混淆矩阵，我们就可以算出一组 Sensitivity 和 Specificity 的值。接着我们不断调整阈值，以获得所有的 Sensitivity 和 Specificity 对，因为这里我们的样本点较少，所以让阈值根据样本点来采样即可，依然用横线表示阈值，则所有阈值的采样情况如下：
 
-![](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/image-20190430224415492.png)
+![](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/image-20190430224415492.png?raw=true)
 
 我们把这些阈值对应的混淆矩阵都列出来：
 
-![](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/all_cm.png)
+![](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/all_cm.png?raw=true)
 
 然后，计算这些混淆矩阵对应的 Sensitivity 和 1-Specificity：
 
@@ -81,7 +81,7 @@ Specificity 这个词有"免疫"的意思，能和未患病相关联，所以也
 
 根据该表格，以 1-Specificity 为横轴，Sensitivity 为纵轴作图，通常，在画 ROC 曲线时，我们把 1-Specificity 对应的坐标轴记为 FPR (False Positive Rate)，把 Sensitivity 对应的坐标轴记为  TPR (True Positive Rate)，如下：
 
-![](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/image-20190430234946551.png)
+![](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/image-20190430234946551.png?raw=true)
 
 ROC 曲线有以下特点：
 
@@ -90,7 +90,7 @@ ROC 曲线有以下特点：
 
 根据 ROC 曲线的第 1 个特点：「曲线越靠近左上角，模型的效果越好」，意味着一个更好模型，其曲线下方的面积更大，我们把 ROC 曲线下方的面积称为 AUC (Area Under Curve)，有了这个概念后，只需一个数值就可以衡量模型的好坏了，上面示例模型的 AUC 如下：
 
-![](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/image-20190501230646710.png)
+![](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/image-20190501230646710.png?raw=true)
 
 通常情况下我们都使用 AUC 来评估模型，既然是”通常”，那肯定就有例外：当患病率 (或正样本占比)  非常小时，Ture Negative 就会非常大，这个值就会使影响 FPR，使 FPR 较小，为了避免这种影响，我们可以将 FPR 用另一个指标代替：Precision
 $$
