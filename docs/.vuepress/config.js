@@ -70,7 +70,8 @@ module.exports = {
         '7.reverse-integer',
         'ready_for_machine_learning',
         'cross-validation',
-        'confusion-matrix'
+        'confusion-matrix',
+        'homl-ch2'
       ],
       '/math/': [
         'linear_transformation'

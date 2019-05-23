@@ -29,3 +29,8 @@
 
 * [二分类评估，从混淆矩阵说起](/AI/confusion-matrix.md)
 
+
+## 《Hands-On Machine Learning》学习笔记
+
+* [【学习笔记】Hands On Machine Learning - Chap2. End-to-End Machine Learning Project](/AI/homl-ch2.md)
+

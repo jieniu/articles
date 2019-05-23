@@ -27,11 +27,11 @@ $$
 
 ## Sensitivity 和 Specificity
 
-所以，我们需要引入更多的衡量指标，Sensitivity (或 Recall) 表示实际患者中，预测成功的概率，同时 Sensitivity 这个词也有"过敏"的意思，和患病对应，这样关联起来比较好记：
+所以，我们需要引入更多的衡量指标，Sensitivity (或 Recall) 表示实际患者中，预测患病成功的概率，同时 Sensitivity 这个词也有"过敏"的意思，和患病对应，这样关联起来比较好记：
 $$
 Sensitivity = \frac{TP}{TP+FN}
 $$
-既然有衡量患病（正样例）的指标，那肯定也有衡量未患病（负样例）的指标，Specificity 就是用来表示实际未患病的人群中，预测成功的概率，即
+既然有衡量患病（正样例）的指标，那肯定也有衡量未患病（负样例）的指标，Specificity 就是用来表示实际未患病的人群中，预测未患病成功的概率，即
 $$
 Specificity = \frac{TN}{TN+FP}
 $$
