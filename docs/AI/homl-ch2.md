@@ -212,7 +212,7 @@ plt.legend()
 ### 相关性分析
 计算属性间的相关性 - standard correlation coefficient (Pearson's r)，属性间是否相关可参考以下图示
 
-![](/Users/fengyajie/github/HOML-exercises/chapter2/datasets/scc.png?raw=true)
+![](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/scc.png?raw=true)
 
 **注意：最底下的图形为非线性关系**
 
