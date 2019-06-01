@@ -71,7 +71,8 @@ module.exports = {
         'ready_for_machine_learning',
         'cross-validation',
         'confusion-matrix',
-        'homl-ch2'
+        'homl-ch2',
+        'homl-ch3'
       ],
       '/math/': [
         'linear_transformation'

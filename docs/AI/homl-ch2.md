@@ -658,4 +658,4 @@ final_rmse
 
 
 
-以上是该书第二张的学习笔记，你也可以下载 [Jupyter NoteBook](https://github.com/jieniu/HOML-exercises/blob/master/chapter2/ch2_note.ipynb) 来具体操练一下。
+以上是该书第二章的学习笔记，你也可以下载 [Jupyter NoteBook](https://github.com/jieniu/HOML-exercises/blob/master/chapter2/ch2_note.ipynb) 来具体操练一下。

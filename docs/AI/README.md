@@ -34,3 +34,7 @@
 
 * [【学习笔记】Hands On Machine Learning - Chap2. End-to-End Machine Learning Project](/AI/homl-ch2.md)
 
+
+
+* [【学习笔记】Hands On Machine Learning - Chap3. Classification](/AI/homl-ch3.md)
+
