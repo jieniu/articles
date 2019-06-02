@@ -71,6 +71,7 @@ module.exports = {
         'ready_for_machine_learning',
         'cross-validation',
         'confusion-matrix',
+        'bias-variance',
         'homl-ch2',
         'homl-ch3'
       ],

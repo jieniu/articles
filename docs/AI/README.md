@@ -21,20 +21,16 @@
 
 * [Machine Leanring 环境准备——搭建 Jupyter Notebook](/AI/ready_for_machine_learning.md)
 
-
-
 * [理解「交叉验证」(Cross Validation)](/AI/cross-validation.md)
 
-
-
 * [二分类评估，从混淆矩阵说起](/AI/confusion-matrix.md)
+
+* [理解 Bias 和 Variance](/AI/bias-variance.md)
 
 
 ## 《Hands-On Machine Learning》学习笔记
 
 * [【学习笔记】Hands On Machine Learning - Chap2. End-to-End Machine Learning Project](/AI/homl-ch2.md)
-
-
 
 * [【学习笔记】Hands On Machine Learning - Chap3. Classification](/AI/homl-ch3.md)
 
