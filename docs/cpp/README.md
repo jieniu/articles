@@ -4,6 +4,8 @@
 
 ## 高级 C++
 
+* [Logic constness And Bitwise constness](/cpp/logic_constness_and_bitwise_constness.md)
+
 * [复制操作符怎么写](/cpp/assignment_to_self_in_assignment_operator.md)
 
 * [异常处理和析构函数](/cpp/exception_and_destructor.md)

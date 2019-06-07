@@ -286,6 +286,12 @@ f1_score(y_train, y_train_knn_pred, average="macro")
 
 特征为带有噪音的图片（每个像素在原有图片的基础上加入噪声），target 为无噪音的图片，预测输出一张没有噪音的图片，即图片的每个像素为 1 个 label，每个 label 的取值范围为 0-255
 
+
+
+以上是该书第三章的学习笔记，你也可以下载 [Jupyter NoteBook](https://github.com/jieniu/HOML-exercises/blob/master/chapter3/ch3_note.ipynb) 来具体操练一下。
+
+
+
 相关文章：
 
 * [【学习笔记】Hands On Machine Learning - Chap2. End-to-End Machine Learning Project](/AI/homl-ch2.md)

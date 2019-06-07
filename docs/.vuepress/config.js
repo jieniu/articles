@@ -45,6 +45,7 @@ module.exports = {
     ],
     sidebar: {
       '/cpp/': [
+        'logic_constness_and_bitwise_constness',
         'assignment_to_self_in_assignment_operator',
         'exception_and_destructor',
         'RAII',

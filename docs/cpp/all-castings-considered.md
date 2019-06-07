@@ -170,7 +170,7 @@ int i = 3;
 const int& cri = i;
 const int* cpi = &i;
 const_cast<int&>(cri) = 4;   // i = 4
-*const_cast<int*>(&cpi) = 5; // i = 5
+*const_cast<int*>(cpi) = 5; // i = 5
 ```
 
 上面的 `i` 不可以是 `const` 类型，否则程序行为是未定义的，如
@@ -181,7 +181,9 @@ const int& cri = i;
 const_cast<int&>(cri) = 4;   // 可编译，但行为未定义
 ```
 
-#reinterpret_cast
+`const_cast` 的典型应用场景在 logic constness，详情请参见[另一篇文章](/cpp/logic_constness_and_bitwise_constness.md)。
+
+## reinterpret_cast
 
 `reinterpret_cast` 是 C++ 中最危险的转型操作，它可以将指针所指的类型重新解释为其他任意类型，且没有任何检验机制。`reinterpret_cast` 主要用于这样的场景：先将一个指针转型为另一种类型（通常为 `void*`），在使用前，再把它转型为原始类型，如下：
 
