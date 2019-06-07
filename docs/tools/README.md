@@ -6,3 +6,5 @@
 
 * [Python 工程管理及 virtualenv 的迁移](/tools/virtualenv-migration.md)
 
+* [VSCode 远程开发插件快速使用](/tools/vscode-remote.md)
+
