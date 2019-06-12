@@ -68,6 +68,7 @@ module.exports = {
         '3.longest-substring',
         '4.median-of-two-sorted-arrays',
         '5.longest-palindromic-substring',
+        '6.zigzag-conversion',
         '7.reverse-integer',
         'ready_for_machine_learning',
         'cross-validation',

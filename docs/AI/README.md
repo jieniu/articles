@@ -12,6 +12,8 @@
 
 * [5. Longest Palindromic Substring](5.longest-palindromic-substring.md)
 
+* [6. ZigZag Conversion](/AI/6.zigzag-conversion.md)
+
 * [7. Reverse Integer](/AI/7.reverse-integer.md)
 
   
