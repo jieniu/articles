@@ -4,7 +4,13 @@
 
 ## 高级 C++
 
+* [const 关键字](/cpp/const.md)
+
+* [编译器产生的默认成员函数（Compiler Generated Functions）](/cpp/compiler_generated_function.md)
+
 * [Logic constness And Bitwise constness](/cpp/logic_constness_and_bitwise_constness.md)
+
+* [禁止成员函数（disallow functions）)(/cpp/disallow_functions.md)
 
 * [复制操作符怎么写](/cpp/assignment_to_self_in_assignment_operator.md)
 
@@ -25,3 +31,5 @@
 * [用户自定义的隐式类型转换](/cpp/user-defined-type-conversion.md)
 
 * [显示类型转换（Casting）](/cpp/all-castings-considered.md)
+
+* [public, protected 和 private 关键字](/cpp/inheritance_public_protect_private.md)

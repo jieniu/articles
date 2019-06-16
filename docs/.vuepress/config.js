@@ -45,7 +45,10 @@ module.exports = {
     ],
     sidebar: {
       '/cpp/': [
+        'const',
+        'compiler_generated_function',
         'logic_constness_and_bitwise_constness',
+        'disallow_functions',
         'assignment_to_self_in_assignment_operator',
         'exception_and_destructor',
         'RAII',
@@ -55,7 +58,8 @@ module.exports = {
         'struct-and-class',
         'resource-managing-class',
         'user-defined-type-conversion',
-        'all-castings-considered'
+        'all-castings-considered',
+        'inheritance_public_protect_private'
       ],
       '/java/': [
         'understanding_collections_threadsafe',

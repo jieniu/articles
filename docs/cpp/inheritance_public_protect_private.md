@@ -2,16 +2,16 @@
 
 C++ 中的继承有 3 种方式，分别是 public、protected 和 private，这三种方式分别对应不同的父类成员的访问权限，总结如下：
 
-1. public, protected 和 private 子类都不能访问父类的 private 成员
+1. public、protected 和 private 子类都不能访问父类的 private 成员
 2. public 作用域下，父类的 public 成员会被继承为 public，父类的 protected 成员会被继承为 protected
 3. protected 作用域下，父类的 public 和 protected 成员会被继承为 protected 成员
 4. private 作用域下，父类的 public 和 protected 成员会被继承为 private 成员
 
-这 4 条规则实际上只有第 2 条是常用的，下面说下这 3 个继承作用域的使用场景。
+这 4 条规则实际上只有第 2 条是常用的，下面说下这 3 种作用域的使用场景。
 
 ## public 继承是一种 is-a 关系
 
-我们经常会将子对象强制转换（casting）为父对象，而 public 继承在这种强制转换的场景下是无障碍的，这种情况下，子类对象可以理解为一种特殊的父类对象，即它们是一种 is-a 的关系；除此之外，其他的由 protected 和 private 作用域继承而来的对象就不具备这样的关系，下面是一个简单的例子：
+我们经常会将子对象强制转换（casting）为父对象，而 public 继承在这种强制转换的场景下是无障碍的，这种情况下，子类对象可以理解为一种特殊的父类对象，即它们是一种 is-a 的关系；除此之外，其他的由 protected 或 private 作用域继承而来的对象就不具备这样的关系，下面是一个简单的例子：
 
 ```java
 #include <iostream>
@@ -68,12 +68,12 @@ public:
 };
 ```
 
-上面的代码中，child 类是以将 hat 组合进来的方式实现的，即让 child 类也具有 hat 的方法，一种很好的办法是将 hat 作为 child 的一个成员，所以这两个类具备 has-a 的关系。下面我们看使用 protected 或 private 继承如何实现 has-a 的关系：
+上面的代码中，child 类是以将 hat 组合进来的方式实现的，即让 child 类也具备 hat 的方法，一种很好的办法是将 hat 作为 child 的一个成员，从语义上，child 和 hat 具备 has-a 的关系。下面我们看使用 protected 或 private 继承如何实现 has-a 的关系：
 
 ```java
 class child : private hat {
 public:
-    using hat::wear; // 此时就可以调用 child 对象就可以调用 hat::wear 方法了
+    using hat::wear; // 此时 child 对象就可以调用 hat::wear 方法了
 };
 
 int main() {
@@ -82,9 +82,9 @@ int main() {
 }
 ```
 
-我们将 child 以 private 的方式继承自 hat，并将 `hat::wear()` 方法放置在 child 的 public 作用域中，这样 child 就「拥有了 hat 的能力」，它们之间也是一种 has-a 关系。
+我们将 child 以 private 的方式继承自 hat，并将 `hat::wear` 方法放置在 child 的 public 作用域中，这样 child 就「拥有了 hat 的能力」，它们之间也是一种 has-a 关系。
 
-虽然不同的实现达到了相同的效果，但依然不建议使用 private 或 protected 的方式实现 has-a 的关系，而建议更多的使用组合模式，一是因为组合模式更为直观，其二是因为组合模式将组合的对象解耦（它们没有多一层继承关系），其三是组合模式更为灵活，试想一个类有多个组合对象的情况。
+虽然不同的实现达到了相同的效果，但**依然不建议使用 private 或 protected 的方式实现 has-a 的关系，而建议更多的使用组合模式**，一是因为组合模式更为直观，其二是因为组合模式将组合的多个对象解耦（它们没有多一层继承关系），其三是组合模式更为灵活，试想一个类有多个组合对象的情况。
 
 ## 总结
 
@@ -98,9 +98,7 @@ int main() {
 以及 2 个使用场景：
 
 1. public 继承是一种 is-a 的关系
-2. private 或 protected 继承是 has-a 关系，且在实现 has-a 时，尽量使用组合模式
-
-
+2. private 或 protected 继承是 has-a 关系；但我们一般不使用这种方式实现 has-a 需求，一般会使用组合模式
 
 
 
