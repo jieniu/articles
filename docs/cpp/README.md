@@ -10,7 +10,7 @@
 
 * [Logic constness And Bitwise constness](/cpp/logic_constness_and_bitwise_constness.md)
 
-* [禁止成员函数（disallow functions）)(/cpp/disallow_functions.md)
+* [禁止成员函数（disallow functions）](/cpp/disallow_functions.md)
 
 * [复制操作符怎么写](/cpp/assignment_to_self_in_assignment_operator.md)
 
