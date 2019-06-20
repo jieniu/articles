@@ -16,6 +16,8 @@
 
 * [7. Reverse Integer](/AI/7.reverse-integer.md)
 
+* [9. Palindrome Number](/AI/9.palindrome-number.md)
+
   
 
 

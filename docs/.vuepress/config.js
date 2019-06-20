@@ -74,6 +74,7 @@ module.exports = {
         '5.longest-palindromic-substring',
         '6.zigzag-conversion',
         '7.reverse-integer',
+        '9.palindrome-number',
         'ready_for_machine_learning',
         'cross-validation',
         'confusion-matrix',
