@@ -89,7 +89,7 @@ server {
 }
 ```
 
-之后你就可以在浏览器中使用 `https://hostname:8888` 来访问 Jupyter Lab 了。
+之后你就可以在浏览器中使用 `https://hostname:8888` 来访问 Jupyter Lab 了。当然，最后的最后，记得设置防火墙，例如打开本文中的 `8888` 端口。
 
 
 
