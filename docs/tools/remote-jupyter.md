@@ -76,6 +76,10 @@ $ cat /var/log/jupyter.log
 最后，我们设置一下 nginx 反向代理：
 
 ```
+map $http_upgrade $connection_upgrade {
+        default upgrade;
+        ''      close;
+}
 server {
         listen 8888;
         listen [::]:8888;
@@ -85,6 +89,9 @@ server {
         location / {
                 proxy_redirect     off;
                 proxy_pass https://127.0.0.1:8889;
+                proxy_http_version    1.1;
+                proxy_set_header      Upgrade $http_upgrade;
+                proxy_set_header      Connection $connection_upgrade;
         }
 }
 ```
