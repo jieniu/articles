@@ -92,7 +92,8 @@ module.exports = {
         'vuepress_website',
         'python-virtualenv-commands',
         'virtualenv-migration',
-        'vscode-remote'
+        'vscode-remote',
+        'remote-jupyter'
       ],
     }
   },
