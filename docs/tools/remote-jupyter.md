@@ -76,6 +76,10 @@ $ cat /var/log/jupyter.log
 最后，我们设置一下 nginx 反向代理：
 
 ```
+http {
+				# 避免 413 Request Entity Too Large 错误
+        client_max_body_size 20m;
+}
 map $http_upgrade $connection_upgrade {
         default upgrade;
         ''      close;
