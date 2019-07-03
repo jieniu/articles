@@ -75,6 +75,8 @@ module.exports = {
         '6.zigzag-conversion',
         '7.reverse-integer',
         '9.palindrome-number',
+        '10.regular-expression-matching',
+        '11.container-with-most-water',
         'ready_for_machine_learning',
         'cross-validation',
         'confusion-matrix',
