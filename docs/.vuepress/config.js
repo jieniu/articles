@@ -81,6 +81,7 @@ module.exports = {
         'cross-validation',
         'confusion-matrix',
         'bias-variance',
+        'cart1',
         'homl-ch2',
         'homl-ch3'
       ],

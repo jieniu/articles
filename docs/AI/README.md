@@ -35,6 +35,7 @@
 
 * [理解 Bias 和 Variance](/AI/bias-variance.md)
 
+* [决策树算法之分类回归树 CART（Classification and Regression Trees）【1】](/AI/cart1.md)
 
 ## 《Hands-On Machine Learning》学习笔记
 
