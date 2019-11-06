@@ -37,6 +37,8 @@
 
 * [决策树算法之分类回归树 CART（Classification and Regression Trees）【1】](/AI/cart1.md)
 
+* [决策树算法之分类回归树 CART（Classification and Regression Trees）【2】](/AI/cart2.md)
+
 ## 《Hands-On Machine Learning》学习笔记
 
 * [【学习笔记】Hands On Machine Learning - Chap2. End-to-End Machine Learning Project](/AI/homl-ch2.md)

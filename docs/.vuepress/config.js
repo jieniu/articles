@@ -82,6 +82,7 @@ module.exports = {
         'confusion-matrix',
         'bias-variance',
         'cart1',
+        'cart2',
         'homl-ch2',
         'homl-ch3'
       ],
