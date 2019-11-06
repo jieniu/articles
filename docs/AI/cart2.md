@@ -31,9 +31,11 @@
 ![thr](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/thr.jpg?raw=true)
 
 上图中的 SSR 为 
+
 $$
-(0-0)^2+(0-35.8)^2 + \dots + (0-35.8)^2 = 31358
+SSR = (0-0)^2+(0-35.8)^2 + \dots + (0-35.8)^2 = 31358
 $$
+
 每算完一个 SSR，都要改变阈值，用同样的方法在新的分类下算一个新的 SSR，如此循环下去，直到遍历完所有可能的域值，此时我们就可以作出一个「域值-SSR」的关系图，如下：
 
 ![thr-ssr](https://github.com/jieniu/articles/blob/master/docs/.vuepress/public/thr-ssr.jpg?raw=true)
