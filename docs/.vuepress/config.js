@@ -83,6 +83,7 @@ module.exports = {
         'bias-variance',
         'cart1',
         'cart2',
+        'rforest',
         'homl-ch2',
         'homl-ch3'
       ],
