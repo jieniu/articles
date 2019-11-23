@@ -28,12 +28,20 @@
 ## Machine Learning
 
 * [Machine Leanring 环境准备——搭建 Jupyter Notebook](/AI/ready_for_machine_learning.md)
+
 * [理解「交叉验证」(Cross Validation)](/AI/cross-validation.md)
+
 * [二分类评估，从混淆矩阵说起](/AI/confusion-matrix.md)
+
 * [理解 Bias 和 Variance](/AI/bias-variance.md)
+
 * [决策树算法之分类回归树 CART（Classification and Regression Trees）【1】](/AI/cart1.md)
+
 * [决策树算法之分类回归树 CART（Classification and Regression Trees）【2】](/AI/cart2.md)
+
 * [决策树之随机森林](/AI/rforest.md)
+
+* [决策树算法之 AdaBoost](/AI/adaboost.md)
 
 ## 《Hands-On Machine Learning》学习笔记
 
