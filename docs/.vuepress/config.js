@@ -85,6 +85,7 @@ module.exports = {
         'cart2',
         'rforest',
         'adaboost',
+        'lr',
         'homl-ch2',
         'homl-ch3'
       ],

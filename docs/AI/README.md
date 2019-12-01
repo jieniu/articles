@@ -43,6 +43,8 @@
 
 * [决策树算法之 AdaBoost](/AI/adaboost.md)
 
+* [深入理解逻辑回归算法](/AI/lr.md)
+
 ## 《Hands-On Machine Learning》学习笔记
 
 * [【学习笔记】Hands On Machine Learning - Chap2. End-to-End Machine Learning Project](/AI/homl-ch2.md)
