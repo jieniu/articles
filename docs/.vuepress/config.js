@@ -86,6 +86,7 @@ module.exports = {
         'rforest',
         'adaboost',
         'lr',
+        'gbdt',
         'homl-ch2',
         'homl-ch3'
       ],
