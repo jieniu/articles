@@ -87,6 +87,7 @@ module.exports = {
         'adaboost',
         'lr',
         'gbdt',
+        'gbdt2',
         'homl-ch2',
         'homl-ch3'
       ],

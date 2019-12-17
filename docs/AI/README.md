@@ -47,6 +47,8 @@
 
 * [决策树之 GBDT 算法 - 回归部分](/AI/gbdt.md)
 
+* [决策树之 GBDT 算法 - 分类部分](/AI/gbdt2.md)
+
 ## 《Hands-On Machine Learning》学习笔记
 
 * [【学习笔记】Hands On Machine Learning - Chap2. End-to-End Machine Learning Project](/AI/homl-ch2.md)
