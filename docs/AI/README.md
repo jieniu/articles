@@ -49,6 +49,8 @@
 
 * [决策树之 GBDT 算法 - 分类部分](/AI/gbdt2.md)
 
+* [使用 TensorFlow2.0 实现线性回归](/AI/linear-scratch.md)
+
 ## 《Hands-On Machine Learning》学习笔记
 
 * [【学习笔记】Hands On Machine Learning - Chap2. End-to-End Machine Learning Project](/AI/homl-ch2.md)
