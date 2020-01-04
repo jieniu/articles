@@ -89,6 +89,7 @@ module.exports = {
         'gbdt',
         'gbdt2',
         'linear-scratch',
+        'softmax',
         'homl-ch2',
         'homl-ch3'
       ],
