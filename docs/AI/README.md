@@ -55,6 +55,8 @@
 
 * [用 TensorFlow2.0 实现 Softmax 多分类](/AI/softmax.md)
 
+* [一文读懂神经网络](/AI/dnn.md)
+
 ## 《Hands-On Machine Learning》学习笔记
 
 * [【学习笔记】Hands On Machine Learning - Chap2. End-to-End Machine Learning Project](/AI/homl-ch2.md)
