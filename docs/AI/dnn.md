@@ -271,9 +271,7 @@ $$
 参考：
 
 * [3Blue1Brown: Neural Network](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
-* [wikipedia: 人工神经网络](https://zh.wikipedia.org/wiki/人工神经网络)
-
 * [3Blue1Brown: Linear Transformer](https://www.youtube.com/watch?v=kYB8IZa5AuE&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=3)
-
 * [反向传播算法](https://www.youtube.com/watch?v=ibJpTrp5mcE&list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49&index=13&t=0s)
+* [wikipedia: 人工神经网络](https://zh.wikipedia.org/wiki/人工神经网络)
 
