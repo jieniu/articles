@@ -7,6 +7,7 @@
         "markdown-it-katex": "^2.0.3"
     },
     "devDependencies": {
-        "@vuepress/plugin-google-analytics": "^1.2.0"
+        "@vuepress/plugin-google-analytics": "^1.2.0",
+        "vuepress-plugin-comment": "^0.7.2"
     }
 }

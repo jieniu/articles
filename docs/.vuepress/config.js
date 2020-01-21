@@ -18,7 +18,19 @@ module.exports = {
     ['@vuepress/last-updated'],
     ['@vuepress/google-analytics', {
       'ga': 'UA-86907063-2'
-    }]
+    }],
+    [
+      'vuepress-plugin-comment',
+      {
+        choosen: 'valine', 
+        // options选项中的所有参数，会传给Valine的配置
+        options: {
+          el: '#valine-vuepress-comment',
+          appId: 'NSVHICXSy81REAUABkt1jprV-gzGzoHsz',
+          appKey: 'gpzYqs93NamO3WaovdVn91s0'
+        }
+      }
+    ]
   ],
   themeConfig: {
     repo: 'https://github.com/jieniu/articles',
@@ -27,7 +39,6 @@ module.exports = {
     repoLabel: 'Github',
     // 默认为 true，设置为 false 来禁用
     editLinks: true,
-    sidebarDepth: 2, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
     lastUpdated: '上次更新', // string | boolean
     searchMaxSuggestions: 6,
     nav:[
@@ -44,73 +55,8 @@ module.exports = {
         ]
       }
     ],
-    sidebar: {
-      '/cpp/': [
-        'const',
-        'compiler_generated_function',
-        'logic_constness_and_bitwise_constness',
-        'disallow_functions',
-        'assignment_to_self_in_assignment_operator',
-        'exception_and_destructor',
-        'RAII',
-        'static_initialization_fiasco',
-        'virtual_destructor',
-        'virtual_function_and_constructor',
-        'struct-and-class',
-        'resource-managing-class',
-        'user-defined-type-conversion',
-        'all-castings-considered',
-        'inheritance_public_protect_private'
-      ],
-      '/java/': [
-        'understanding_collections_threadsafe',
-        'spring_boot_thread_pool_timer',
-        'powermock_and_unittest'
-      ],
-      '/AI/': [
-        'ready_for_machine_learning',
-        'cross-validation',
-        'confusion-matrix',
-        'bias-variance',
-        'cart1',
-        'cart2',
-        'rforest',
-        'adaboost',
-        'lr',
-        'gbdt',
-        'gbdt2',
-        'linear-scratch',
-        'softmax',
-        'dnn',
-        'homl-ch2',
-        'homl-ch3'
-      ],
-      '/math/': [
-        'linear_transformation'
-      ],
-      '/mysql_notes/': [
-        '1.MySQL架构'
-      ],
-      '/tools/': [
-        'vuepress_website',
-        'python-virtualenv-commands',
-        'virtualenv-migration',
-        'vscode-remote',
-        'remote-jupyter'
-      ],
-      '/leetcode/': [
-        '1.two-sum',
-        '2.add-two-numbers',
-        '3.longest-substring',
-        '4.median-of-two-sorted-arrays',
-        '5.longest-palindromic-substring',
-        '6.zigzag-conversion',
-        '7.reverse-integer',
-        '9.palindrome-number',
-        '10.regular-expression-matching',
-        '11.container-with-most-water'
-      ]
-    }
+    sidebarDepth: 2, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
+    //sidebar: 'auto'
   },
     permalink: "/:regular",
 //  markdown: {
