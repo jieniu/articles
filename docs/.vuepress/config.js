@@ -12,13 +12,13 @@ module.exports = {
       buttonText: "刷新"
     }
   },
-  markdown: {
-    lineNumbers: true // 代码块显示行号
-  },
   plugins: [
     ['@vuepress/back-to-top', true],
     ['@vuepress/blog'],
-    ['@vuepress/last-updated']
+    ['@vuepress/last-updated'],
+    ['@vuepress/google-analytics', {
+      'ga': 'UA-86907063-2'
+    }]
   ],
   themeConfig: {
     repo: 'https://github.com/jieniu/articles',
@@ -33,15 +33,16 @@ module.exports = {
     nav:[
       { text: 'C++', link: '/cpp/' }, 
       { text: 'Java', link: '/java/' }, 
-      { text: 'algorithm', 
-        items: [
-          {text: 'articles', link: '/AI/'},
-          { text: 'MyLeeCode', link: 'https://github.com/jieniu/LeetCode.git' }
-        ]
-      }, 
+      { text: 'AI', link: '/AI/'},
       { text: 'math', link: '/math/' }, 
       { text: 'mysql', link: '/mysql_notes/' }, 
       { text: 'tools', link: '/tools/' }, 
+      { text: 'LeetCode', 
+        items: [
+          {text: 'articles', link: '/leetcode/'},
+          { text: 'MyLeeCode', link: 'https://github.com/jieniu/LeetCode.git' }
+        ]
+      }
     ],
     sidebar: {
       '/cpp/': [
@@ -67,16 +68,6 @@ module.exports = {
         'powermock_and_unittest'
       ],
       '/AI/': [
-        '1.two-sum',
-        '2.add-two-numbers',
-        '3.longest-substring',
-        '4.median-of-two-sorted-arrays',
-        '5.longest-palindromic-substring',
-        '6.zigzag-conversion',
-        '7.reverse-integer',
-        '9.palindrome-number',
-        '10.regular-expression-matching',
-        '11.container-with-most-water',
         'ready_for_machine_learning',
         'cross-validation',
         'confusion-matrix',
@@ -107,19 +98,30 @@ module.exports = {
         'vscode-remote',
         'remote-jupyter'
       ],
+      '/leetcode/': [
+        '1.two-sum',
+        '2.add-two-numbers',
+        '3.longest-substring',
+        '4.median-of-two-sorted-arrays',
+        '5.longest-palindromic-substring',
+        '6.zigzag-conversion',
+        '7.reverse-integer',
+        '9.palindrome-number',
+        '10.regular-expression-matching',
+        '11.container-with-most-water'
+      ]
     }
   },
-  permalink: "/:year/:month/:day/:slug",
-  markdown: {
-    lineNumbers: true,
+    permalink: "/:regular",
+//  markdown: {
+ //     lineNumbers: true,
       // options for markdown-it-anchor
-      anchor: { permalink: true },
+  //    anchor: { permalink: true },
       // options for markdown-it-toc
-      toc: { includeLevel: [1,2] },
-      config: md => {
-          // use more markdown-it plugins!
-          md.set({html: true})
-          md.use(require("markdown-it-katex"))
-      }
+   //   toc: { includeLevel: [1,2] },
+  //},
+  extendMarkdown(md) {
+      md.set({html: true})
+      md.use(require("markdown-it-katex"))
   }
 }
