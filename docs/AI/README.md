@@ -32,6 +32,10 @@
 
 * [一文读懂神经网络](/AI/dnn.md)
 
+* [一文读懂 Word2vec](/AI/word2vec.md)
+
+* [【译】BERT Fine-Tuning 指南（with PyTorch）](/AI/bert-fine-tune.md)
+
 ## 《Hands-On Machine Learning》学习笔记
 
 * [【学习笔记】Hands On Machine Learning - Chap2. End-to-End Machine Learning Project](/AI/homl-ch2.md)
