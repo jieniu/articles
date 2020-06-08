@@ -36,11 +36,11 @@ skip-gram 表示为根据中心词来预测其周围的词，而 CBOW 是反过�
 
 因为在实际运用中，skip-gram 更为常见，后文主要以该方法进行说明。上面左图可以用一个条件概率来表达：
 $$
-p(\textrm{the},\textrm{man},\textrm{his},\textrm{son} \mid \textrm{loves})
+p(\text{the},\text{man},\text{his},\text{son} | \text{loves})
 $$
 假设每个词出现的概率都是独立的，则上式可分解为：
 $$
-p(\textrm{the} \mid \textrm{loves})\cdot p(\textrm{man}\mid \textrm{loves})\cdot p(\textrm{his}\mid \textrm{loves})\cdot p(\textrm{son} \mid \textrm{loves})
+p(\text{the} \mid \text{loves})\cdot p(\text{man}\mid \text{loves})\cdot p(\text{his}\mid \text{loves})\cdot p(\text{son} \mid \text{loves})
 $$
 我们希望上面的条件概率越大越好，于是，对于语料库中每一组中心词所产生出的窗口词的条件概率，将它们相乘，就是模型需要优化的指标，或 Loss，如下：
 $$
