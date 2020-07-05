@@ -22,7 +22,7 @@ module.exports = {
     [
       'vuepress-plugin-comment',
       {
-        choosen: 'valine', 
+        choosen: 'valine',
         // options选项中的所有参数，会传给Valine的配置
         options: {
           el: '#valine-vuepress-comment',
@@ -42,30 +42,23 @@ module.exports = {
     lastUpdated: '上次更新', // string | boolean
     searchMaxSuggestions: 6,
     nav:[
-      { text: 'C++', link: '/cpp/' }, 
-      { text: 'Java', link: '/java/' }, 
+      { text: 'C++', link: '/cpp/' },
+      { text: 'Java', link: '/java/' },
       { text: 'AI', link: '/AI/'},
-      { text: 'math', link: '/math/' }, 
-      { text: 'mysql', link: '/mysql_notes/' }, 
-      { text: 'tools', link: '/tools/' }, 
-      { text: 'LeetCode', 
+      { text: 'math', link: '/math/' },
+      { text: 'mysql', link: '/mysql_notes/' },
+      { text: 'tools', link: '/tools/' },
+      { text: 'LeetCode',
         items: [
           {text: 'articles', link: '/leetcode/'},
           { text: 'MyLeeCode', link: 'https://github.com/jieniu/LeetCode.git' }
         ]
       }
     ],
-    sidebarDepth: 2, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
-    //sidebar: 'auto'
+    sidebarDepth: 2 // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
+
   },
     permalink: "/:regular",
-//  markdown: {
- //     lineNumbers: true,
-      // options for markdown-it-anchor
-  //    anchor: { permalink: true },
-      // options for markdown-it-toc
-   //   toc: { includeLevel: [1,2] },
-  //},
   extendMarkdown(md) {
       md.set({html: true})
       md.use(require("markdown-it-katex"))
