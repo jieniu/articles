@@ -26,8 +26,6 @@
 
 * [使用 TensorFlow2.0 实现线性回归](/AI/linear-scratch.md)
 
-* [使用 TensorFlow2.0 实现线性回归](/AI/linear-scratch.md)
-
 * [用 TensorFlow2.0 实现 Softmax 多分类](/AI/softmax.md)
 
 * [一文读懂神经网络](/AI/dnn.md)
@@ -35,6 +33,8 @@
 * [一文读懂 Word2vec](/AI/word2vec.md)
 
 * [【译】BERT Fine-Tuning 指南（with PyTorch）](/AI/bert-fine-tune.md)
+
+* [【译】理解 Ranking Loss，Contrastive Loss，Margin Loss，Triplet Loss，Hinge Loss 等易混淆的概念](/AI/understand_ranking_loss.md)
 
 ## 《Hands-On Machine Learning》学习笔记
 

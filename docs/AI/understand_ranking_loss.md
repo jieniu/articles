@@ -26,11 +26,10 @@ Ranking Losses 有不同的名称，但在大多数场景下，它们的表述�
 
 **对于正样本对，目标是学习它们的表达，使它们之间的距离 $d$ 越小越好；而对于负样本对，要求样本之间的距离超过一个边距 $m$**。Pairwise Ranking Loss 要求正样本对之间的表达的距离为 0，同时负样本对的距离要超过一个边距（margin）。我们用 $r_a$，$r_p$ 和 $r_n$ 来分别表示锚样本、正样本和负样本的表达，$d$ 是一个距离函数，则可以写成：
 $$
-L=\left\{
-\begin{array}
-d(r_a,r_p) & PositivePair\\ 
-max(0,m-d(r_a,r_n)) & NegativePair
-\end{array} \right.
+L=\begin{cases}
+d(r_a,r_p) &\text{if(positive)} \\
+max(0,m-d(r_a,r_n)) &\text{if(negative)}
+ \end{cases}
 $$
 对于正样本对，只有当网络产生的两个元素的表征没有距离时，损失才是0，损失会随着距离的增加而增加。
 
