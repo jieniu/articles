@@ -18,19 +18,7 @@ module.exports = {
     ['@vuepress/last-updated'],
     ['@vuepress/google-analytics', {
       'ga': 'UA-86907063-2'
-    }],
-    [
-      'vuepress-plugin-comment',
-      {
-        choosen: 'valine',
-        // options选项中的所有参数，会传给Valine的配置
-        options: {
-          el: '#valine-vuepress-comment',
-          appId: 'NSVHICXSy81REAUABkt1jprV-gzGzoHsz',
-          appKey: 'gpzYqs93NamO3WaovdVn91s0'
-        }
-      }
-    ]
+    }]
   ],
   themeConfig: {
     repo: 'https://github.com/jieniu/articles',
